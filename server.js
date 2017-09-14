@@ -21,9 +21,11 @@ app.use(function(req,res,next) {
     next(); 
 });
 
+/*
 app.use(function(re,res,next) {
     res.render('maintenance.hbs');
 })
+*/
 
 app.get('/',function(req,res) {
     //res.send('<h1>Hello express</h1>');
@@ -39,6 +41,15 @@ app.get('/',function(req,res) {
         currentYear:new Date().getFullYear(),
         message:'Hello. Hi'
     });
+});
+
+
+app.get('/project',function(req,res) {
+    res.render('project.hbs', {
+         name:'Abhi',
+        currentYear:new Date().getFullYear(),
+        message:'Hello. Welcome to projects page'
+    })
 });
 
 app.get('/about',function(req,res) {
